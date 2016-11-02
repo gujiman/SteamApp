@@ -14,10 +14,11 @@ import {
 import {AppUser} from './providers/app-user/app-user';
 
 const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  databaseURL: '',
-  storageBucket: '',
+  apiKey: 'AIzaSyC8VNM0ULk6uG1vfpepJ9CxgqeQWcxt1hw',
+  authDomain: 'steamdemo-8c203.firebaseapp.com',
+  databaseURL: 'https://steamdemo-8c203.firebaseio.com',
+  storageBucket: 'steamdemo-8c203.appspot.com',
+  messagingSenderId: '290283305225',
 };
 
 /**
