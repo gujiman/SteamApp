@@ -1,29 +1,22 @@
 import { Component } from '@angular/core';
-import {Validators, FormBuilder } from '@angular/forms';
+import { NavController } from 'ionic-angular';
+import { FormBuilder, FormGroup } from '@angular/forms';
+ 
 @Component({
-  template: `
-    <form [formGroup]="todo" (ngSubmit)="logForm()">
-      <ion-item>
-        <ion-label>Todo</ion-label>
-        <ion-input type="text" formControlName="title"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea formControlName="description"></ion-textarea>
-      </ion-item>
-      <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
-    </form>
-  `
+  templateUrl: 'pages/valetors/add-valetors.html',
 })
-export class FormsPage {
-  constructor(private formBuilder: FormBuilder) {}
-  ionViewLoaded() {
-    this.todo = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: [''],
-    });
+export class BuildformPage {
+  myForm: FormGroup;
+  private myData: any;
+  constructor(private navCtrl: NavController, private builder: FormBuilder) {
+    this.myForm = builder.group({
+      'subject': '',
+      'message': ''
+    })
   }
-  logForm(){
-    console.log(this.todo.value)
+ 
+  onSubmit(formData) {
+    console.log('Form data is ', formData);
+    this.myData = formData;
   }
 }

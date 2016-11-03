@@ -26,6 +26,7 @@ export class TabsPage {
     this.tabPages = [
       { title: 'Home', component: HomePage, icon: 'home' },
       { title: 'Settings', component: SettingsPage, icon: 'settings' },
+      {title: 'events', component: }
     ];
 
   }
