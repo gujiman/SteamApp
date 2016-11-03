@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {HomePage} from '../home/home';
 import {NgFor} from '@angular/common';
 import {SettingsPage} from '../settings/settings';
+import {EventListPage} from '../event-list/event-list';
 /**
  *
  *
@@ -26,7 +27,7 @@ export class TabsPage {
     this.tabPages = [
       { title: 'Home', component: HomePage, icon: 'home' },
       { title: 'Settings', component: SettingsPage, icon: 'settings' },
-      {title: 'events', component: }
+      { title: 'Events', component: EventListPage, icon: 'events' }
     ];
 
   }
