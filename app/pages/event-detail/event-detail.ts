@@ -23,5 +23,6 @@ export class EventDetailPage {
      this.eventData.deleteEvent(eventName, eventData, eventPrice, eventCost)then( () => {
       this.nav.delete();
     });
+     
    };
 }
