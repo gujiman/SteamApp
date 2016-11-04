@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { EventData } from '../../providers/event-data/event-data';
 /*
   Generated class for the EventDetailPage page.
 
@@ -9,11 +9,18 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
   templateUrl: 'build/pages/event-detail/event-detail.html',
+  providers: [EventData]
 })
 export class EventDetailPage {
   currentEvent: any;
-   constructor(private nav: NavController, private navParams: NavParams) {
+
+   constructor(private nav: NavController, private navParams: NavParams, private eventData: EventData) {
      this.navParams = navParams;
+     this.eventData = eventData;
      this.currentEvent = this.navParams.get('eventDetail');
+   }
+
+   deleteEvent(eventName: string, eventDate: string, eventPrice: number, eventCost: number) {
+     this.eventData.deleteEvent(eventName, eventData, eventPrice, eventCost);
    }
 }
