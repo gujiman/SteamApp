@@ -10,4 +10,8 @@
   </h2>
   <p>Ticket: <strong>{{currentEvent.price}}</strong></p>
   <p>Date: <strong>{{currentEvent.date}}</strong></p>
+
+  <button block (click)="deleteEvent(eventName, eventDate, eventPrice, eventCost)">
+      Delete Event
+  </button>
 </ion-content>

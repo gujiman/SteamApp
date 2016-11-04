@@ -8,7 +8,7 @@ export class EventData {
 
   constructor() {
     this.currentUser = firebase.auth().currentUser;
-    this.eventList = firebase.database().ref('userProfile/' + this.currentUser.uid + '/eventList');
+    this.eventList = firebase.database().ref('userProfile/Jo8hdagfbeZ1RsleLLnuFReEGRh1/eventList');
   }
 
   createEvent(eventName: string, eventDate: string, eventPrice: number, eventCost: number): any {
@@ -20,6 +20,10 @@ export class EventData {
     }).then( newEvent => {
       this.eventList.child(newEvent.key).child('id').set(newEvent.key);
     });
+  }
+
+  deleteEvent(eventName: string, eventData: string, eventPrice: number, eventCost: number): any {
+    return this.eventList.delete();
   }
 
   getEventList(): any {
